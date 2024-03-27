@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 #include "ImageClass.h"
-//#include "Size.h"
-//#include "Point.h"
-//#include "Rectangle.h"
+#include "SizeClass.h"
+#include "PointClass.h"
+#include "RectangleClass.h"
 
 using namespace std;
 

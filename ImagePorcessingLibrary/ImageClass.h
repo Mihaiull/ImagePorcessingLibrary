@@ -5,9 +5,9 @@
 /*
 Remember to actually do these libraries before running it
 */
-//#include "Size.h"
-//#include "Point.h"
-//#include "Rectangle.h"
+#include "SizeClass.h"
+#include "PointClass.h"
+#include "RectangleClass.h"
 
 
 //the images we will be working with will be .ascii.pgm. 
@@ -34,21 +34,27 @@ public:
 	bool load(std::string imagePath); //a method to load an image from a file. The method should return true if the image was loaded successfully, and false otherwise.
 	bool save(std::string imagePath) const; //a method to save the image to a file. The method should return true if the image was saved successfully, and false otherwise.
 
-	Image operator+(const Image& i);
-	Image operator-(const Image& i);
-	Image operator*(double s);
-	//bool getROI(Image& roiImg, Rectangle roiRect);
-	bool setROI(Image &roiImg, unsigned int x, unsigned int y, unsigned int width, unsigned int height);
+	Image operator+(const Image& i); //overload the + operator to add two images. The method should return a new Image instance which is the sum of the two images.
+	Image operator-(const Image& i); //overload the - operator to subtract two images. The method should return a new Image instance which is the difference of the two images.
+	Image operator*(double s); //overload the * operator to multiply an image by a scalar. The method should return a new Image instance which is the result of the multiplication.
+	//the methods should throw an exception if the two images have different sizes.
+
+
+	/*
+	region of interest (ROI) in this case will be a rectangle. The method should return true if the ROI is valid (i.e. the rectangle is inside the image), and false otherwise.
+	*/
+	bool getROI(Image& roiImg, Rectangle roiRect);
+	bool getROI(Image &roiImg, unsigned int x, unsigned int y, unsigned int width, unsigned int height);
 
 	bool isEmpty() const; //returns true if the image is empty (i.e. m_data is nullptr and m_height and m_width are 0), and false otherwise.
 
-	//Size size()	const; //a method to return the size of the image as an object of the Size class.
+	Size size()	const; //a method to return the size of the image as an object of the Size class.
 
 	unsigned int getWidth() const;
 	unsigned int getHeight() const;
 
 	unsigned char& at(unsigned int x, unsigned int y);
-	//unsigned char& at(Point pt);
+	unsigned char& at(Point pt);
 
 	unsigned char* row(int y);
 
