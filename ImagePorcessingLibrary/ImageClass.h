@@ -65,6 +65,9 @@ public:
 	static Image zeros(unsigned int width, unsigned int height);
 	static Image ones(unsigned int width, unsigned int height);
 
+	void setPixel(unsigned int x, unsigned int y, unsigned char value);
+	unsigned char getPixel(unsigned int x, unsigned int y) const;
+
 private:
 	unsigned char** m_data; //a pointer to a pointer of unsigned char which will store the image pixels. This data must be dynamically alocated on the heap.
 	//two variables of type unsigned int to store the width and height of the image.

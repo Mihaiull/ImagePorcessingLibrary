@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ImageClass.cpp" />
+    <ClCompile Include="ImageProcessing.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PointClass.cpp" />
     <ClCompile Include="RectangleClass.cpp" />
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageClass.h" />
+    <ClInclude Include="ImageProcessing.h" />
     <ClInclude Include="PointClass.h" />
     <ClInclude Include="RectangleClass.h" />
     <ClInclude Include="SizeClass.h" />
